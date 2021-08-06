@@ -26,7 +26,7 @@ public class OnKeyPress_MoveGravityplus : MonoBehaviour
 
 	void Update()
 	{ // ずっと行う
-		if(secondjump >= 3)
+		if(groundFlag)
         {
 			secondjump = 0;
         }
@@ -41,13 +41,32 @@ public class OnKeyPress_MoveGravityplus : MonoBehaviour
 			vx = -speed; // 左に進む移動量を入れる
 			leftFlag = true;
 		}
-		if (Input.GetKey("space"))
+		
+		// もし、スペースキーが押されたとき、足が何かに触れていたら
+		if (Input.GetKeyDown("space") && groundFlag)
 		{
-
+			
 			if (pushFlag == false)
 			{ // 押しっぱなしでなければ
 				secondjump++;
+				jumpFlag = true; // ジャンプの準備
 				pushFlag = true; // 押しっぱなし状態
+				
+			}
+		}
+		else
+		{
+			pushFlag = false; // 押しっぱなし解除
+		}
+		if (Input.GetKeyDown("space") && groundFlag == false )
+		{
+
+			if (pushFlag == false && secondjump <= 0)
+			{ // 押しっぱなしでなければ
+				
+				jumpFlag = true; // ジャンプの準備
+				pushFlag = true; // 押しっぱなし状態
+				secondjump++;
 
 			}
 		}
@@ -55,38 +74,10 @@ public class OnKeyPress_MoveGravityplus : MonoBehaviour
 		{
 			pushFlag = false; // 押しっぱなし解除
 		}
-		// もし、スペースキーが押されたとき、足が何かに触れていたら
-		if (Input.GetKey("space") && groundFlag)
-		{
-			
-			if (pushFlag == false)
-			{ // 押しっぱなしでなければ
-				jumpFlag = true; // ジャンプの準備
-				pushFlag = true; // 押しっぱなし状態
-				
-			}
-		}
-		else
-		{
-			pushFlag = false; // 押しっぱなし解除
-		}
-		if (Input.GetKey("space") && groundFlag == false && secondjump <= 2)
-		{
-			
-			if (pushFlag == false)
-			{ // 押しっぱなしでなければ
-				jumpFlag = true; // ジャンプの準備
-				pushFlag = true; // 押しっぱなし状態
-				
-			}
-		}
-		else
-		{
-			pushFlag = false; // 押しっぱなし解除
-		}
-	    
+
+
 	}
-	
+
 	void FixedUpdate()
 	{ // ずっと行う（一定時間ごとに）
 	  // 移動する（重力をかけたまま）
