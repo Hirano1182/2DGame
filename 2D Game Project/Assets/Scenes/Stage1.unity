@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  jumppower: 7
+  jumppower: 5
   secondjump: 0
 --- !u!50 &128199017
 Rigidbody2D:
