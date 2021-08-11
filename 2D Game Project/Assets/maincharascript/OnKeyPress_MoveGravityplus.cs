@@ -8,6 +8,7 @@ public class OnKeyPress_MoveGravityplus : MonoBehaviour
 
 	public float speed = 3; // スピード：Inspectorで指定
 	public float jumppower = 8;  // ジャンプ力：Inspectorで指定
+	public float rotateAngle = 0;
 
 	float vx = 0;
 	bool leftFlag = false; // 左向きかどうか
@@ -22,6 +23,7 @@ public class OnKeyPress_MoveGravityplus : MonoBehaviour
 	  // 衝突時に回転させない
 		rbody = GetComponent<Rigidbody2D>();
 		rbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+		
 	}
 
 	void Update()
@@ -67,6 +69,7 @@ public class OnKeyPress_MoveGravityplus : MonoBehaviour
 				jumpFlag = true; // ジャンプの準備
 				pushFlag = true; // 押しっぱなし状態
 				secondjump++;
+				
 
 			}
 		}
@@ -89,11 +92,13 @@ public class OnKeyPress_MoveGravityplus : MonoBehaviour
 		{
 			jumpFlag = false;
 			rbody.AddForce(new Vector2(0, jumppower), ForceMode2D.Impulse);
+		
 		}
 	}
 	void OnTriggerStay2D(Collider2D collision)
 	{ // 足が何かに触れたら
 		groundFlag = true;
+		
 	}
 	void OnTriggerExit2D(Collider2D collision)
 	{ // 足に何も触れなかったら
