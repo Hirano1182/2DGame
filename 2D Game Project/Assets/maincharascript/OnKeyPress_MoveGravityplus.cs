@@ -17,13 +17,15 @@ public class OnKeyPress_MoveGravityplus : MonoBehaviour
 	bool groundFlag = false; // 足が何かに触れているかどうか
 	public int secondjump = 0;
 	Rigidbody2D rbody;
+	private AudioSource sound01;
 
 	void Start()
 	{ // 最初に行う
 	  // 衝突時に回転させない
 		rbody = GetComponent<Rigidbody2D>();
 		rbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-		
+		AudioSource[] audioSources = GetComponents<AudioSource>();
+		sound01 = audioSources[0];
 	}
 
 	void Update()
@@ -53,7 +55,7 @@ public class OnKeyPress_MoveGravityplus : MonoBehaviour
 				secondjump++;
 				jumpFlag = true; // ジャンプの準備
 				pushFlag = true; // 押しっぱなし状態
-				
+				sound01.PlayOneShot(sound01.clip);
 			}
 		}
 		else
@@ -69,7 +71,8 @@ public class OnKeyPress_MoveGravityplus : MonoBehaviour
 				jumpFlag = true; // ジャンプの準備
 				pushFlag = true; // 押しっぱなし状態
 				secondjump++;
-				
+				sound01.PlayOneShot(sound01.clip);
+
 
 			}
 		}

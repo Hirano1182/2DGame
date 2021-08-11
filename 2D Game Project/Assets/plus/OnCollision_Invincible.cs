@@ -6,12 +6,13 @@ public class OnCollision_Invincible : MonoBehaviour
 {
 	public string target;
 	private Renderer render;
+	
 
 
 	void start()
     {
 		render = GetComponent<SpriteRenderer>();
-	
+		
 	}
 	void OnCollisionEnter2D(Collision2D col)
 	{
@@ -44,6 +45,7 @@ public class OnCollision_Invincible : MonoBehaviour
 		}
 		//ƒŒƒCƒ„[‚ğPlayer‚É–ß‚·
 		gameObject.layer = LayerMask.NameToLayer("player");
+		
 	}
 	//********** I—¹ **********//
 }
