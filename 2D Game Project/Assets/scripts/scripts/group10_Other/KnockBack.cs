@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameStoper : MonoBehaviour
+public class KnockBack : MonoBehaviour
 {
 	public string targetObjectName;
 	public float speed = 3;
@@ -20,20 +20,19 @@ public class GameStoper : MonoBehaviour
 	void Update()
 	{
 		if (Input.GetKey("right"))
-		{ // もし、右キーが押されたら
-			vx = -speed; // 右に進む移動量を入れる
+		{ 
+			vx = -speed;
 			
 		}
 		if (Input.GetKey("left"))
-		{ // もし、左キーが押されたら
-			vx = speed; // 左に進む移動量を入れる
+		{ 
+			vx = speed;
 			
 		}
 
 	}
 	void OnCollisionEnter2D(Collision2D collision)
-	{ // 衝突したとき
-	  // もし、衝突したものの名前が目標オブジェクトだったら
+	{ 
 		if (collision.gameObject.name == targetObjectName)
 		{
 			StartCoroutine("Damage");

@@ -7,14 +7,17 @@ public class gameclear_and_changescene : MonoBehaviour
 {
     public string target;
     public string sceneName;
+    public string objectname;
     public int check;
+    GameObject gameObject1;
+
 
     Vector3 base_pos;
 
     void Start()
-    { // 最初に行う
-      // カメラの元の位置を覚えておく
-        base_pos = Camera.main.gameObject.transform.position;
+    {
+        gameObject1 = GameObject.Find(objectname);
+       
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -22,7 +25,7 @@ public class gameclear_and_changescene : MonoBehaviour
         if(collision.gameObject.name == target)
         {
             check++;
-            
+           gameObject1.GetComponent<OnKeyPress_MoveGravityplus>().enabled = false;
             Invoke(nameof(Damage), 3.0f);
 
         }
