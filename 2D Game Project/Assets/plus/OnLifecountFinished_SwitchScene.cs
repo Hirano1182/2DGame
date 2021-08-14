@@ -29,8 +29,9 @@ public class OnLifecountFinished_SwitchScene : MonoBehaviour
 	}
 	void Damage()
 	{
-		SceneManager.LoadScene(sceneName);
-		
+		GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("RETRY").gameObject.SetActive(true);
+		GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("TYTLE").gameObject.SetActive(true);
+		Time.timeScale = 0;
 	}
 
 	void OnDestroy()

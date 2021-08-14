@@ -6,16 +6,20 @@ using UnityEngine.UI;
 
 public class ONClickBottom : MonoBehaviour
 {
-    public string showObjectName;
+    public string showObjectName1;
+    public string showObjectName2;
 
-    GameObject showObject;
+    GameObject showObject1;
+    GameObject showObject2;
     bool flag;
     // Start is called before the first frame update
     void Start()
     { // 最初に行う
       // 消す前に表示オブジェクトを覚えておいて
-        showObject = GameObject.Find(showObjectName);
-        showObject.SetActive(false); // 消す
+        showObject1 = GameObject.Find(showObjectName1);
+        showObject1.SetActive(false);
+        showObject2 = GameObject.Find(showObjectName2);
+        showObject2.SetActive(false);
         flag = false;
     }
 
@@ -24,13 +28,15 @@ public class ONClickBottom : MonoBehaviour
         if (flag == true)
         {
             flag = false;
-            showObject.SetActive(false);
+            GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("RETRY").gameObject.SetActive(false);
+            GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("TYTLE").gameObject.SetActive(false);
             Time.timeScale = 1;
         }
         else
         {
             flag = true;
-            showObject.SetActive(true);
+            GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("RETRY").gameObject.SetActive(true);
+            GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("TYTLE").gameObject.SetActive(true);
             Time.timeScale = 0;
         }
 

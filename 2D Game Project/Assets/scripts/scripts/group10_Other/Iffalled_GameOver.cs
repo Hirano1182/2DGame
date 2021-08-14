@@ -5,22 +5,12 @@ using UnityEngine;
 
 public class Iffalled_GameOver : MonoBehaviour
 {
-    public string ObjectName1;
-    public string ObjectName2;
-    public string ObjectName3;
     public string targetObjectName;
     
-    GameObject showObject1;
-    GameObject showObject2;
-    GameObject showObject3;
+    
     // Start is called before the first frame update
     void Start()
     {
-        showObject1 = GameObject.Find(ObjectName1);
-        showObject1.SetActive(false);
-        showObject2 = GameObject.Find(ObjectName2);
-        showObject2.SetActive(false);
-        showObject3 = GameObject.Find(ObjectName3);
         
         Time.timeScale = 1;
     }
@@ -38,9 +28,8 @@ public class Iffalled_GameOver : MonoBehaviour
 
     void Damage()
     {
-        showObject1.SetActive(true);
-        showObject2.SetActive(true);
-        
+        GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("RETRY").gameObject.SetActive(true);
+        GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("TYTLE").gameObject.SetActive(true);
     }
 
     void OnDestroy()

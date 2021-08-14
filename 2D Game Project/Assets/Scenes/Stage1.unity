@@ -1245,7 +1245,7 @@ GameObject:
   - component: {fileID: 1342993164}
   - component: {fileID: 1342993163}
   m_Layer: 5
-  m_Name: Text
+  m_Name: lifetext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1487,7 +1487,7 @@ GameObject:
   - component: {fileID: 1615107061}
   - component: {fileID: 1615107063}
   m_Layer: 5
-  m_Name: Text
+  m_Name: life
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1906,8 +1906,9 @@ GameObject:
   - component: {fileID: 1690136695}
   - component: {fileID: 1690136694}
   - component: {fileID: 1690136693}
+  - component: {fileID: 1690136696}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MENU
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1976,7 +1977,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1690136694}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1690136696}
+        m_TargetAssemblyTypeName: ONClickBottom, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1690136694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2015,6 +2028,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690136691}
   m_CullTransparentMesh: 1
+--- !u!114 &1690136696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690136691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614532c1f463d444a92dbf99c46e90a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showObjectName1: RETRY
+  showObjectName2: TYTLE
 --- !u!1 &1703595148
 GameObject:
   m_ObjectHideFlags: 0
@@ -2374,9 +2401,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc86f31f3f7351a489b3b4e731ca0571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectName1: RETRY
-  ObjectName2: TYTLE
-  ObjectName3: gameover
   targetObjectName: mochi2kai
 --- !u!1 &1856705470
 GameObject:
@@ -2603,9 +2627,9 @@ GameObject:
   - component: {fileID: 2036452498}
   - component: {fileID: 2036452506}
   - component: {fileID: 2036452503}
+  - component: {fileID: 2036452509}
   - component: {fileID: 2036452507}
   - component: {fileID: 2036452508}
-  - component: {fileID: 2036452509}
   m_Layer: 9
   m_Name: mochi2kai
   m_TagString: Player
@@ -2671,7 +2695,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
