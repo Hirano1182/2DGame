@@ -228,8 +228,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253778716}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00015640259}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1640228390}
@@ -237,7 +237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -419.93}
+  m_AnchoredPosition: {x: 0, y: -422.07}
   m_SizeDelta: {x: 304.47, y: 63.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &253778718
@@ -449,6 +449,7 @@ GameObject:
   - component: {fileID: 470881696}
   - component: {fileID: 470881695}
   - component: {fileID: 470881694}
+  - component: {fileID: 470881697}
   m_Layer: 5
   m_Name: RETRY
   m_TagString: Untagged
@@ -473,8 +474,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 325.4, y: -118.81}
-  m_SizeDelta: {x: 340.21, y: 196.47}
+  m_AnchoredPosition: {x: 277.36, y: 0.70003}
+  m_SizeDelta: {x: 286.05, y: 196.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &470881694
 MonoBehaviour:
@@ -519,7 +520,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 470881695}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 470881697}
+        m_TargetAssemblyTypeName: OnClick_Changescene, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &470881695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,6 +571,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470881692}
   m_CullTransparentMesh: 1
+--- !u!114 &470881697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470881692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa3ba423d630714c8e45ffbbaa65153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Stage1
 --- !u!1 &522520237
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,6 +849,7 @@ GameObject:
   - component: {fileID: 760748552}
   - component: {fileID: 760748551}
   - component: {fileID: 760748550}
+  - component: {fileID: 760748553}
   m_Layer: 5
   m_Name: TYTLE
   m_TagString: Untagged
@@ -847,8 +874,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -298, y: -118.81}
-  m_SizeDelta: {x: 340.21, y: 196.47}
+  m_AnchoredPosition: {x: -247, y: 0}
+  m_SizeDelta: {x: 286.05, y: 196.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &760748550
 MonoBehaviour:
@@ -893,7 +920,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 760748551}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 760748553}
+        m_TargetAssemblyTypeName: OnClick_Changescene, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &760748551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -932,6 +971,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760748548}
   m_CullTransparentMesh: 1
+--- !u!114 &760748553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760748548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa3ba423d630714c8e45ffbbaa65153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Tytle
 --- !u!1 &929327154
 GameObject:
   m_ObjectHideFlags: 0

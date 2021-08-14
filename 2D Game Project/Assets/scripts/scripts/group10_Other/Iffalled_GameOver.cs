@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class Iffalled_GameOver : MonoBehaviour
 {
@@ -30,7 +30,7 @@ public class Iffalled_GameOver : MonoBehaviour
     {
         if (collision.gameObject.name == targetObjectName)
         {
-            showObject3.SetActive(true);
+            GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("gameover").gameObject.SetActive(true);
             Invoke(nameof(Damage), 3.0f);
 
         }
@@ -40,7 +40,7 @@ public class Iffalled_GameOver : MonoBehaviour
     {
         showObject1.SetActive(true);
         showObject2.SetActive(true);
-        Time.timeScale = 0;
+        
     }
 
     void OnDestroy()

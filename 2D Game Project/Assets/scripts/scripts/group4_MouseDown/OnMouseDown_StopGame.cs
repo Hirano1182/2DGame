@@ -9,7 +9,8 @@ public class OnMouseDown_StopGame : MonoBehaviour {
 		Time.timeScale = 1; // 時間を動かす
 	}
 
-	void OnMouseDown() { // タッチしたら
-		Time.timeScale = 0; // 時間を止める
+	void OnMouseDown() 
+	{
+		Time.timeScale = 0;
 	}
 }
