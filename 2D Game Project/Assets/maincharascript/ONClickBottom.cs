@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class ONClickBottom : MonoBehaviour
+public class OnClickBottom : MonoBehaviour
 {
     public string showObjectName1;
     public string showObjectName2;

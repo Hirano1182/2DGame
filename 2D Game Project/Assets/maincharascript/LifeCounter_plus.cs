@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LifeCounter : MonoBehaviour
+public class LifeCounter_plus : MonoBehaviour
 {
 
     public static int life;

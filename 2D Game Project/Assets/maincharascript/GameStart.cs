@@ -21,7 +21,7 @@ public class GameStart : MonoBehaviour
     {
 
         gameObject1 = GameObject.Find(objectname);
-        gameObject1.GetComponent<OnKeyPress_MoveGravityplus>().enabled = false;
+        gameObject1.GetComponent<OnKeyPress_MoveGravityPlus>().enabled = false;
 		showObject1 = GameObject.Find(ObjectName1);
 		showObject1.SetActive(false);
 		showObject2 = GameObject.Find(ObjectName2);
@@ -54,7 +54,7 @@ public class GameStart : MonoBehaviour
 		yield return new WaitForSeconds(1.00f);
 		showObject4.SetActive(false);
 		
-		gameObject1.GetComponent<OnKeyPress_MoveGravityplus>().enabled = true;
+		gameObject1.GetComponent<OnKeyPress_MoveGravityPlus>().enabled = true;
 
 	}
 }

@@ -13,7 +13,7 @@ public class OnCollision_Lifecount : MonoBehaviour
 		if (collision.gameObject.name == targetObjectName)
 		{
 			// カウンターの値を増やす
-			LifeCounter.life = LifeCounter.life + addValue;
+			LifeCounter_plus.life = LifeCounter_plus.life + addValue;
 		}
 	}
 }

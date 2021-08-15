@@ -3,25 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class OnLifecountFinished_SwitchScene : MonoBehaviour
+public class OnLifecountFinished_SwitchScene_plus : MonoBehaviour
 {
     public int lastCount = 0; 
     public string sceneName = "";
-	public string showObjectName;   // 表示オブジェクト名：Inspectorで指定
+	public string showObjectName = "";   // 表示オブジェクト名：Inspectorで指定
 
 	GameObject showObject;
 
 	void Start()
     {
-		showObject = GameObject.Find(showObjectName);
+		GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("gameover").gameObject.SetActive(false);
+
 		showObject.SetActive(false); // 消す
 	}
 
 	void FixedUpdate(){ 
 	  
-		if (LifeCounter.life == lastCount){
+		if (LifeCounter_plus.life == lastCount){
 
-			showObject.SetActive(true);
+			GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("gameover").gameObject.SetActive(true);
 			Invoke(nameof(Damage), 3.0f);
 			
 			
