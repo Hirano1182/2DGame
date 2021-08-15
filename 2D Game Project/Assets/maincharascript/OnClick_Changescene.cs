@@ -9,6 +9,7 @@ public class OnClick_Changescene : MonoBehaviour
     // Start is called before the first frame update
     public void OnClick()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(sceneName);
     }
 
