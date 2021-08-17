@@ -6,12 +6,12 @@ using UnityEngine;
 public class Iffalled_GameOver : MonoBehaviour
 {
     public string targetObjectName;
-    
-    
+    GameObject gameObject1;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameObject1 = GameObject.Find(targetObjectName);
         Time.timeScale = 1;
     }
 
@@ -21,6 +21,7 @@ public class Iffalled_GameOver : MonoBehaviour
         if (collision.gameObject.name == targetObjectName)
         {
             GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("gameover").gameObject.SetActive(true);
+            gameObject1.GetComponent<OnKeyPress_MoveGravityPlus>().enabled = false;
             Invoke(nameof(Damage), 3.0f);
 
         }

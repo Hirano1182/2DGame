@@ -8,14 +8,16 @@ public class OnLifecountFinished_SwitchScene_plus : MonoBehaviour
     public int lastCount = 0; 
     public string sceneName = "";
 	public string showObjectName = "";   // 表示オブジェクト名：Inspectorで指定
+	public string targetObjectName;
 
 	GameObject showObject;
+	GameObject gameObject1;
 
 	void Start()
     {
 		GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("gameover").gameObject.SetActive(false);
-
-		showObject.SetActive(false); // 消す
+		gameObject1 = GameObject.Find(targetObjectName);
+		// 消す
 	}
 
 	void FixedUpdate(){ 
@@ -23,13 +25,15 @@ public class OnLifecountFinished_SwitchScene_plus : MonoBehaviour
 		if (LifeCounter_plus.life == lastCount){
 
 			GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("gameover").gameObject.SetActive(true);
+			gameObject1.GetComponent<OnKeyPress_MoveGravityPlus>().enabled = false;
+
 			Invoke(nameof(Damage), 3.0f);
-			
 			
 		}
 	}
 	void Damage()
 	{
+		
 		GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("RETRY").gameObject.SetActive(true);
 		GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("TYTLE").gameObject.SetActive(true);
 		Time.timeScale = 0;
