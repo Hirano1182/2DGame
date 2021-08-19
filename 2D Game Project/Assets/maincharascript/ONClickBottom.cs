@@ -28,15 +28,15 @@ public class OnClickBottom : MonoBehaviour
         if (flag == true)
         {
             flag = false;
-            GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("RETRY").gameObject.SetActive(false);
-            GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("TYTLE").gameObject.SetActive(false);
+            GameObject.Find("Canvas").transform.Find("RETRY").gameObject.SetActive(false);
+            GameObject.Find("Canvas").transform.Find("TYTLE").gameObject.SetActive(false);
             Time.timeScale = 1;
         }
         else
         {
             flag = true;
-            GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("RETRY").gameObject.SetActive(true);
-            GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("TYTLE").gameObject.SetActive(true);
+            GameObject.Find("Canvas").transform.Find("RETRY").gameObject.SetActive(true);
+            GameObject.Find("Canvas").transform.Find("TYTLE").gameObject.SetActive(true);
             Time.timeScale = 0;
         }
 

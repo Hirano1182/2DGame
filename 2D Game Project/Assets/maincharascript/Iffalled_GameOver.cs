@@ -20,7 +20,7 @@ public class Iffalled_GameOver : MonoBehaviour
     {
         if (collision.gameObject.name == targetObjectName)
         {
-            GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("gameover").gameObject.SetActive(true);
+            GameObject.Find("Canvas").transform.Find("gameover").gameObject.SetActive(true);
             gameObject1.GetComponent<OnKeyPress_MoveGravityPlus>().enabled = false;
             Invoke(nameof(Damage), 3.0f);
 
@@ -29,8 +29,8 @@ public class Iffalled_GameOver : MonoBehaviour
 
     void Damage()
     {
-        GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("RETRY").gameObject.SetActive(true);
-        GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("TYTLE").gameObject.SetActive(true);
+        GameObject.Find("Canvas").transform.Find("RETRY").gameObject.SetActive(true);
+        GameObject.Find("Canvas").transform.Find("TYTLE").gameObject.SetActive(true);
     }
 
     void OnDestroy()

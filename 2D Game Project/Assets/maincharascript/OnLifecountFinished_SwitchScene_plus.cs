@@ -15,7 +15,7 @@ public class OnLifecountFinished_SwitchScene_plus : MonoBehaviour
 
 	void Start()
     {
-		GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("gameover").gameObject.SetActive(false);
+		GameObject.Find("Canvas").transform.Find("gameover").gameObject.SetActive(false);
 		gameObject1 = GameObject.Find(targetObjectName);
 		// è¡Ç∑
 	}
@@ -24,7 +24,7 @@ public class OnLifecountFinished_SwitchScene_plus : MonoBehaviour
 	  
 		if (LifeCounter_plus.life == lastCount){
 
-			GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("gameover").gameObject.SetActive(true);
+			GameObject.Find("Canvas").transform.Find("gameover").gameObject.SetActive(true);
 			gameObject1.GetComponent<OnKeyPress_MoveGravityPlus>().enabled = false;
 
 			Invoke(nameof(Damage), 3.0f);
@@ -34,8 +34,8 @@ public class OnLifecountFinished_SwitchScene_plus : MonoBehaviour
 	void Damage()
 	{
 		
-		GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("RETRY").gameObject.SetActive(true);
-		GameObject.Find("Canvas").transform.Find("RawImage").transform.Find("TYTLE").gameObject.SetActive(true);
+		GameObject.Find("Canvas").transform.Find("RETRY").gameObject.SetActive(true);
+		GameObject.Find("Canvas").transform.Find("TYTLE").gameObject.SetActive(true);
 		Time.timeScale = 0;
 	}
 
