@@ -9,7 +9,6 @@ public class OnKeyPress_MoveGravityplus : MonoBehaviour
 	public float speed = 3; // スピード：Inspectorで指定
 	public float jumppower = 8;  // ジャンプ力：Inspectorで指定
 	public float rotateAngle = 0;
-	public int check = 0; //チェック
 
 	float vx = 0;
 	bool leftFlag = false; // 左向きかどうか
@@ -54,7 +53,6 @@ public class OnKeyPress_MoveGravityplus : MonoBehaviour
 			if (pushFlag == false)
 			{ // 押しっぱなしでなければ
 				secondjump++;
-				check++;
 				jumpFlag = true; // ジャンプの準備
 				pushFlag = true; // 押しっぱなし状態
 				sound01.PlayOneShot(sound01.clip);
@@ -72,7 +70,6 @@ public class OnKeyPress_MoveGravityplus : MonoBehaviour
 				
 				jumpFlag = true; // ジャンプの準備
 				pushFlag = true; // 押しっぱなし状態
-				check++;
 				secondjump++;
 				sound01.PlayOneShot(sound01.clip);
 
