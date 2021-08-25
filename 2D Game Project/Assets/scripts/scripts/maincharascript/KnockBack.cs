@@ -42,11 +42,11 @@ public class KnockBack : MonoBehaviour
 
 	IEnumerator Damage()
 	{
-		GetComponent<OnKeyPress_MoveGravityPlus>().enabled = false;
+		GetComponent<OnKeyPress_MoveGravityplus>().enabled = false;
 		rbody.AddForce(new Vector2(vx, knockbackpower), ForceMode2D.Impulse);
 	
 		yield return new WaitForSeconds(1.00f);
-		GetComponent<OnKeyPress_MoveGravityPlus>().enabled = true;
+		GetComponent<OnKeyPress_MoveGravityplus>().enabled = true;
 
 	}
 }
