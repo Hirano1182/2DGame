@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // キーを押すと、移動する（重力対応版）
-public class OnKeyPress_MoveGravityplus : MonoBehaviour
+public class OnKeyPress_MoveGravityPlus : MonoBehaviour
 {
 
 	public float speed = 3; // スピード：Inspectorで指定
