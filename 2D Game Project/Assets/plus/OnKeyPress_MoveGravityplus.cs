@@ -12,10 +12,11 @@ public class OnKeyPress_MoveGravityplus : MonoBehaviour
 
 	float vx = 0;
 	bool leftFlag = false; // 左向きかどうか
-	bool pushFlag = false; // スペースキーを押しっぱなしかどうか
-	bool jumpFlag = false; // ジャンプ状態かどうか
-	bool groundFlag = false; // 足が何かに触れているかどうか
+	public bool pushFlag = false; // スペースキーを押しっぱなしかどうか
+	public bool jumpFlag = false; // ジャンプ状態かどうか
+	public bool groundFlag = false; // 足が何かに触れているかどうか
 	public int secondjump = 0;
+	public int jumpFlagcount = 0;
 	Rigidbody2D rbody;
 	private AudioSource sound01;
 
@@ -54,6 +55,7 @@ public class OnKeyPress_MoveGravityplus : MonoBehaviour
 			{ // 押しっぱなしでなければ
 				secondjump++;
 				jumpFlag = true; // ジャンプの準備
+				jumpFlagcount++;
 				pushFlag = true; // 押しっぱなし状態
 				sound01.PlayOneShot(sound01.clip);
 			}
@@ -65,10 +67,11 @@ public class OnKeyPress_MoveGravityplus : MonoBehaviour
 		if (Input.GetKeyDown("space") && groundFlag == false )
 		{
 
-			if (pushFlag == false && secondjump <= 0)
+			if (pushFlag == false && secondjump <= 1)
 			{ // 押しっぱなしでなければ
 				
 				jumpFlag = true; // ジャンプの準備
+				jumpFlagcount++;
 				pushFlag = true; // 押しっぱなし状態
 				secondjump++;
 				sound01.PlayOneShot(sound01.clip);
