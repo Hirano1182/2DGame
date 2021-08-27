@@ -25,7 +25,7 @@ public class gameclear_and_changescene : MonoBehaviour
         if(collision.gameObject.name == target)
         {
             check++;
-           gameObject1.GetComponent<OnKeyPress_MoveGravityPlus>().enabled = false;
+           gameObject1.GetComponent<TestScript>().enabled = false;
             Invoke(nameof(Damage), 3.0f);
 
         }

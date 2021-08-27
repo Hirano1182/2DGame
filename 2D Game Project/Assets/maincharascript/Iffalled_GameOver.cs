@@ -21,7 +21,7 @@ public class Iffalled_GameOver : MonoBehaviour
         if (collision.gameObject.name == targetObjectName)
         {
             GameObject.Find("Canvas").transform.Find("gameover").gameObject.SetActive(true);
-            gameObject1.GetComponent<OnKeyPress_MoveGravityPlus>().enabled = false;
+            gameObject1.GetComponent<TestScript>().enabled = false;
             Invoke(nameof(Damage), 3.0f);
 
         }
