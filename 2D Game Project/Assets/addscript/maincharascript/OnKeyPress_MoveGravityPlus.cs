@@ -35,12 +35,12 @@ public class OnKeyPress_MoveGravityPlus : MonoBehaviour
 			secondjump = 0;
         }
 		vx = 0;
-		if (Input.GetKey("right"))
+		if (Input.GetAxis("Horizontal") > 0)
 		{ // もし、右キーが押されたら
 			vx = speed; // 右に進む移動量を入れる
 			leftFlag = false;
 		}
-		if (Input.GetKey("left"))
+		if (Input.GetAxis("Horizontal") < 0)
 		{ // もし、左キーが押されたら
 			vx = -speed; // 左に進む移動量を入れる
 			leftFlag = true;
