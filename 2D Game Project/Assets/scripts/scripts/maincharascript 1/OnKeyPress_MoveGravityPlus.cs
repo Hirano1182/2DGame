@@ -65,7 +65,7 @@ public class OnKeyPress_MoveGravityPlus : MonoBehaviour
 		if (Input.GetKeyDown("space") && groundFlag == false )
 		{
 
-			if (pushFlag == false && secondjump <= 0)
+			if (pushFlag == false && secondjump <= 1)
 			{ // ‰Ÿ‚µ‚Á‚Ï‚È‚µ‚Å‚È‚¯‚ê‚Î
 				
 				jumpFlag = true; // ƒWƒƒƒ“ƒv‚Ì€”õ

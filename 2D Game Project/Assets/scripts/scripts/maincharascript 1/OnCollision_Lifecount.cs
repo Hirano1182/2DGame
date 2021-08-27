@@ -15,7 +15,7 @@ public class OnCollision_Lifecount : MonoBehaviour
 	}
 
 
-	void OnCollision Lifecount(Collision2D collision)
+	void OnCollisionEnter2D(Collision2D collision)
 	{ // 衝突したとき
 	  // もし、衝突したものの名前が目標オブジェクトだったら
 		if (collision.gameObject.name == targetObjectName)

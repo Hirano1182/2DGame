@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameStart : MonoBehaviour
+public class GameStart_kyouseisukuroru: MonoBehaviour
 {
     public string ObjectName1;
     public string ObjectName2;
     public string ObjectName3;
     public string ObjectName4;
     public string objectname;
+	public string objectname1;
+	public string objectname2;
 
 	GameObject gameObject1;
+	GameObject gameObject2;
+	GameObject gameObject3;
 	GameObject showObject1;
 	GameObject showObject2;
 	GameObject showObject3;
@@ -19,9 +23,12 @@ public class GameStart : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-
-        gameObject1 = GameObject.Find(objectname);
+	gameObject1 = GameObject.Find(objectname);
         gameObject1.GetComponent<OnKeyPress_MoveGravityPlus>().enabled = false;
+		gameObject2 = GameObject.Find(objectname1);
+		gameObject2.GetComponent<Forever_MoveH>().enabled = false;
+		gameObject3 = GameObject.Find(objectname2);
+		gameObject3.GetComponent<Forever_MoveH>().enabled = false;
 		showObject1 = GameObject.Find(ObjectName1);
 		showObject1.SetActive(false);
 		showObject2 = GameObject.Find(ObjectName2);
@@ -36,7 +43,6 @@ public class GameStart : MonoBehaviour
 	// Update is called once per frame
 	IEnumerator StartMotion()
 	{
-		//ÉåÉCÉÑÅ[ÇPlayerDamageÇ…ïœçX
 		showObject1.SetActive(true);
 
 		yield return new WaitForSeconds(1.00f);
@@ -53,8 +59,9 @@ public class GameStart : MonoBehaviour
 
 		yield return new WaitForSeconds(1.00f);
 		showObject4.SetActive(false);
-		
-		gameObject1.GetComponent<OnKeyPress_MoveGravityPlus>().enabled = true;
 
+		gameObject1.GetComponent<OnKeyPress_MoveGravityPlus>().enabled = true;
+		gameObject2.GetComponent<Forever_MoveH>().enabled = true;
+		gameObject3.GetComponent<Forever_MoveH>().enabled = true;
 	}
 }
