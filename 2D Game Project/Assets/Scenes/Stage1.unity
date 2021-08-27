@@ -5542,7 +5542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3.5
   jumppower: 12
-  secondjumppower: 24
+  secondjumppower: 20
   mainjumppower: 12
   rotateAngle: 0
   secondjump: 0

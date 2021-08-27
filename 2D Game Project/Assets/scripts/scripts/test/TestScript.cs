@@ -98,7 +98,7 @@ public class TestScript : MonoBehaviour
 			count = 0;
         }
 		
-		if(count >= 10)
+		if(count >= 13)
         {
 			jumppower = secondjumppower;
         }
