@@ -52,7 +52,7 @@ public class OnKeyPress_MoveGravityPlus : MonoBehaviour
 			
 			if (pushFlag == false)
 			{ // 押しっぱなしでなければ
-				secondjump++;
+				//secondjump++;
 				jumpFlag = true; // ジャンプの準備
 				pushFlag = true; // 押しっぱなし状態
 				sound01.PlayOneShot(sound01.clip);
@@ -65,7 +65,7 @@ public class OnKeyPress_MoveGravityPlus : MonoBehaviour
 		if (Input.GetKeyDown("space") && groundFlag == false )
 		{
 
-			if (pushFlag == false && secondjump <= 1)
+			if (pushFlag == false && secondjump <= 0)
 			{ // 押しっぱなしでなければ
 				
 				jumpFlag = true; // ジャンプの準備
