@@ -10,6 +10,6 @@ public class   Forever_ShowLifecount : MonoBehaviour
     
     void Update()
     {
-        GetComponent<Text>().text = LifeCounter.life.ToString();
+        GetComponent<Text>().text = LifeCounter_plus.life.ToString();
     }
 }
