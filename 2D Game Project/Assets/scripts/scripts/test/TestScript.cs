@@ -55,7 +55,7 @@ public class TestScript : MonoBehaviour
 
 			if (pushFlag == false)
 			{ // 押しっぱなしでなければ
-				secondjump++;
+				
 				jumpFlag = true; // ジャンプの準備
 				pushFlag = true; // 押しっぱなし状態
 				sound01.PlayOneShot(sound01.clip);
