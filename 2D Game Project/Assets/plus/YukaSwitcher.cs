@@ -9,14 +9,17 @@ public class YukaSwitcher : MonoBehaviour {
     public bool SwitchGroundFlag;
     public string FYukaName;
     public string TYukaName;
+    private AudioSource sound01;
 
-    GameObject FYuka;
-    GameObject TYuka;
+    GameObject[] FYuka;
+    GameObject[] TYuka;
 
     void Start()
     {
-        FYuka = GameObject.Find(FYukaName);
-        TYuka = GameObject.Find(TYukaName);
+        FYuka = GameObject.FindGameObjectsWithTag("YukaF");
+        TYuka = GameObject.FindGameObjectsWithTag("YukaT");
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        sound01 = audioSources[0];
     }
 
     void OnTriggerStay2D(Collider2D collision)
@@ -33,12 +36,14 @@ public class YukaSwitcher : MonoBehaviour {
             if (SwitchGroundFlag == true && YukaSwitcher.YukaStatus == false)
             {
                 YukaSwitcher.YukaStatus = true;
-                SwitchGroundFlag = false;
+            sound01.PlayOneShot(sound01.clip);
+            SwitchGroundFlag = false;
             }
             else if (SwitchGroundFlag == true && YukaSwitcher.YukaStatus == true)
             {
                 YukaSwitcher.YukaStatus = false;
-                SwitchGroundFlag = false;
+            sound01.PlayOneShot(sound01.clip);
+            SwitchGroundFlag = false;
             }
      }
 
@@ -50,22 +55,34 @@ public class YukaSwitcher : MonoBehaviour {
     void FixedUpdate()
     {
 
-            if (YukaSwitcher.YukaStatus == true)
+        if (YukaSwitcher.YukaStatus == true)
+        {
+            for (int i = 0; i < TYuka.Length; i++)
             {
-                TYuka.SetActive(true);
-            }
-            else if (YukaSwitcher.YukaStatus == false)
-            {
-                TYuka.SetActive(false);
+                TYuka[i].SetActive(true);
             }
 
-            if (YukaSwitcher.YukaStatus == true)
+        }
+        else if (YukaSwitcher.YukaStatus == false)
+        {
+            for (int i = 0; i < TYuka.Length; i++)
             {
-                FYuka.SetActive(false);
+                TYuka[i].SetActive(false);
             }
+        }
+        if (YukaSwitcher.YukaStatus == true)
+            {
+            for (int i = 0; i < FYuka.Length; i++)
+            {
+                FYuka[i].SetActive(false);
+            }
+        }
             else if (YukaSwitcher.YukaStatus == false)
             {
-                FYuka.SetActive(true);
+            for (int i = 0; i < FYuka.Length; i++)
+            {
+                FYuka[i].SetActive(true);
             }
+        }
     }
 }

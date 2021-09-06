@@ -14,8 +14,8 @@ public class GameStart : MonoBehaviour
 	GameObject showObject1;
 	GameObject showObject2;
 	GameObject showObject3;
-	GameObject showObject4
-		;
+	GameObject showObject4;
+		
 	// Start is called before the first frame update
 	void Start()
     {
