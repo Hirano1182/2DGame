@@ -25,7 +25,7 @@ public class Sometimes_Appear : MonoBehaviour
         count = count + 1; // カウンターに1を足して
         if (count >= Max_Count)
         { // もし、maxCountになったら
-            Invoke(nameof(T_Active), 3.5f); // 回転して曲がる
+            Invoke(nameof(T_Active), 5.0f); //
             count = 0; // カウンターをリセット
             Target.SetActive(false);
         }
